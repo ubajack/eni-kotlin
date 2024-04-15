@@ -9,6 +9,17 @@ fun main() {
     val fries = "\uD83C\uDF5F"
     val burger = "\uD83C\uDF54"
 
+    val menu = mapOf(
+        "fries" to fries,
+        "burger" to burger
+    )
+
+    val menuUpgraded = mapOf(
+        Pair("fries", fries),
+        Pair("burger", burger)
+    )
+
+
     val burgersAndFries = mutableListOf(
         fries,
         burger,
@@ -57,4 +68,8 @@ fun main() {
     println("Testing function for number $targetNumber: ${occurrencesCount(randomList, targetNumber)}")
     println(burgersAndFries.countOccurrences(fries))
     println(randomList.countOccurrences(targetNumber))
+
+    print(menu)
+    println(menuUpgraded)
+    println("I want ${menu["fries"]} with a ${menu["burger"]}")
 }
