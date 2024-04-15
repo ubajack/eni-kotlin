@@ -36,8 +36,33 @@ fun RGBtoHEXv2(red: Int, green: Int, blue: Int): String {
     return "$redHEX$greenHEX$blueHEX"
 }
 
+// https://kotlinlang.org/docs/extensions.html
+// https://kotlinlang.org/docs/functions.html#infix-notation
+infix fun Int.plus(valueToAdd: Int) = this + valueToAdd
+
+infix fun Int.plusv2(other: Int): Int {
+    return this + other
+}
+
+infix fun String.bonjour(name: String) = "$this dit bonjour à $name"
+
 fun main() {
     val colorRGB = Triple(233, 150, 122)
     val colorHEX = RGBtoHEXv2(colorRGB.first, colorRGB.second, colorRGB.third)
     println(colorHEX)
+
+    val a = 2
+    val b = 8
+
+    a plus b
+
+    val result = a.plus(b)
+    val result1 = a plus b
+
+    println(result1)
+
+    val pierre = "Pierre"
+    val paul = "Paul"
+
+    println(pierre bonjour paul)
 }
